@@ -15,8 +15,8 @@ source:
   sha256: d54713cb230a7523cb87f1c7f2d68d9c570c01e61b551457bd71bb7bd38198d4
 
 build:
-  number: 0
-  skip: true  # [win32]
+  noarch: generic
+  number: 1000
 
   rpaths:
     - lib/R/lib/
@@ -45,8 +45,7 @@ about:
     of tight clusters and outliers. As a result, it also introduces more meaningful
     reordering for a coupled heatmap visualization.
   license_family: GPL3
-  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'  # [unix]
-  license_file: '{{ environ["PREFIX"] }}\R\share\licenses\GPL-3'  # [win]
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
 extra:
   recipe-maintainers:
