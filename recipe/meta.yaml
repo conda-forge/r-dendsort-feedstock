@@ -8,45 +8,42 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: dendsort_{{ version }}.tar.gz
   url:
     - https://cran.r-project.org/src/contrib/dendsort_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/dendsort/dendsort_{{ version }}.tar.gz
   sha256: a2951a097e25526c16025c549a330140dd71612fd0d5d6577c13661e0ef14767
 
 build:
-  noarch: generic
+  merge_build_host: True  # [win]
   number: 0
-
+  noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{ posix }}zip               # [win]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('dendsort')"  # [not win]
+    - $R -e "library('dendsort')"           # [not win]
     - "\"%R%\" -e \"library('dendsort')\""  # [win]
 
 about:
   home: https://cran.r-project.org/web/packages/dendsort
-  license: GPL-2 | GPL-3
+  license: GPL-2.0-or-later
   summary: An implementation of functions to optimize ordering of nodes in a dendrogram, without affecting the meaning of the dendrogram. A dendrogram can be sorted based on the average distance of subtrees, or based on the smallest distance value. These sorting methods improve readability and interpretability of tree structure,
     especially for tasks such as comparison of different distance measures or linkage types and identification of tight clusters and outliers. As a result, it also introduces more meaningful reordering for a coupled heatmap visualization.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
     - roryk
