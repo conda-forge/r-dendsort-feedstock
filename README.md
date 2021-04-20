@@ -3,13 +3,11 @@ About r-dendsort
 
 Home: https://cran.r-project.org/web/packages/dendsort
 
-Package license: GPL-2 | GPL-3
+Package license: GPL-2.0-or-later
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-dendsort-feedstock/blob/master/LICENSE.txt)
 
 Summary: An implementation of functions to optimize ordering of nodes in a dendrogram, without affecting the meaning of the dendrogram. A dendrogram can be sorted based on the average distance of subtrees, or based on the smallest distance value. These sorting methods improve readability and interpretability of tree structure, especially for tasks such as comparison of different distance measures or linkage types and identification of tight clusters and outliers. As a result, it also introduces more meaningful reordering for a coupled heatmap visualization.
-
-
 
 Current build status
 ====================
@@ -38,6 +36,7 @@ Installing `r-dendsort` from the `conda-forge` channel can be achieved by adding
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `r-dendsort` can be installed with:
@@ -108,18 +107,14 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
 =====================
 
-* [@bgruening](https://github.com/bgruening/)
 * [@conda-forge/r](https://github.com/conda-forge/r/)
-* [@daler](https://github.com/daler/)
-* [@jdblischak](https://github.com/jdblischak/)
-* [@johanneskoester](https://github.com/johanneskoester/)
 * [@roryk](https://github.com/roryk/)
 
