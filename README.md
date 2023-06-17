@@ -1,11 +1,11 @@
-About r-dendsort
-================
+About r-dendsort-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-dendsort-feedstock/blob/main/LICENSE.txt)
 
 Home: https://cran.r-project.org/web/packages/dendsort
 
 Package license: GPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-dendsort-feedstock/blob/main/LICENSE.txt)
 
 Summary: An implementation of functions to optimize ordering of nodes in a dendrogram, without affecting the meaning of the dendrogram. A dendrogram can be sorted based on the average distance of subtrees, or based on the smallest distance value. These sorting methods improve readability and interpretability of tree structure, especially for tasks such as comparison of different distance measures or linkage types and identification of tight clusters and outliers. As a result, it also introduces more meaningful reordering for a coupled heatmap visualization.
 
